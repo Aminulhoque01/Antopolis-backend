@@ -15,6 +15,7 @@ const ProductSchema = new Schema<IProduct>(
     category: {
       type: String,
       required: true,
+     enum: ["Breakfast", "Lunch", "Dinner"],
     },
     rating: {
       type: Number,
