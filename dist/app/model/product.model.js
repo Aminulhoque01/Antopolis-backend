@@ -13,9 +13,8 @@ const ProductSchema = new mongoose_1.Schema({
         required: true,
     },
     category: {
-        type: String,
+        type: [String],
         required: true,
-        enum: ["Breakfast", "Lunch", "Dinner"],
     },
     rating: {
         type: Number,
