@@ -1,12 +1,11 @@
 
-
-export type CategoryType = "Breakfast" | "Lunch" | "Dinner";
+ 
 
 export interface IProduct {
   id: string;
   name: string;
   image: string;
-  category: CategoryType;
+  category: string[];
   rating: number;
   price: number;
 }

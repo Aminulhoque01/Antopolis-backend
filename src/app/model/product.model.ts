@@ -13,9 +13,8 @@ const ProductSchema = new Schema<IProduct>(
       required: true,
     },
     category: {
-      type: String,
+      type: [String],  
       required: true,
-     enum: ["Breakfast", "Lunch", "Dinner"],
     },
     rating: {
       type: Number,
@@ -31,5 +30,4 @@ const ProductSchema = new Schema<IProduct>(
   { timestamps: true }
 );
 
-
-export const Product =model<IProduct>("Product", ProductSchema)  
+export const Product = model<IProduct>("Product", ProductSchema);
