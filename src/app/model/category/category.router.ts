@@ -8,6 +8,7 @@ const categoryRouter = Router();
 
 
 categoryRouter.post("/", CategoryController.addCategory);
+categoryRouter.get("/", CategoryController.getCategory);
 
  
  

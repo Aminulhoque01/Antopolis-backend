@@ -16,6 +16,20 @@ const addCategory = async (req, res) => {
         res.status(500).json({ success: false, message: error.message });
     }
 };
+const getCategory = async (req, res) => {
+    try {
+        const result = await category_service_1.CategoryService.getCategory();
+        res.status(200).json({
+            success: true,
+            message: "Category added successfully",
+            data: result,
+        });
+    }
+    catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
 exports.CategoryController = {
-    addCategory
+    addCategory,
+    getCategory
 };
