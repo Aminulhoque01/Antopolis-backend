@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 import morgan from "morgan";
 import errorHandler from "./utils/errorHandler";
-import router from "./app/model/product.router";
+import router from "./app/model/product/product.router";
+import categoryRouter from "./app/model/category/category.router";
 
  
 dotenv.config();
@@ -25,6 +26,7 @@ app.get("/health", (_req, res) => {
 app.use(errorHandler);
 app.use(express.json({ limit: "50mb" })); // VERY IMPORTANT
 app.use("/api/v1/product", router);
+app.use("/api/v1/category", categoryRouter);
 
 // MongoDB connection
 const connectDB = async () => {

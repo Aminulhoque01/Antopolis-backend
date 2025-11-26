@@ -13,7 +13,7 @@ const ProductSchema = new Schema<IProduct>(
       required: true,
     },
     category: {
-      type: [String],  
+      type: String,  
       required: true,
     },
     rating: {

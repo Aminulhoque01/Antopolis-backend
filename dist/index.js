@@ -42,7 +42,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv = __importStar(require("dotenv"));
 const morgan_1 = __importDefault(require("morgan"));
 const errorHandler_1 = __importDefault(require("./utils/errorHandler"));
-const product_router_1 = __importDefault(require("./app/model/product.router"));
+const product_router_1 = __importDefault(require("./app/model/product/product.router"));
+const category_router_1 = __importDefault(require("./app/model/category/category.router"));
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = (0, express_1.default)();
@@ -57,6 +58,7 @@ app.get("/health", (_req, res) => {
 app.use(errorHandler_1.default);
 app.use(express_1.default.json({ limit: "50mb" })); // VERY IMPORTANT
 app.use("/api/v1/product", product_router_1.default);
+app.use("/api/v1/category", category_router_1.default);
 // MongoDB connection
 const connectDB = async () => {
     console.log("🔄 Attempting MongoDB connection...");

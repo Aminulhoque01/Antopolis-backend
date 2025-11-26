@@ -108,7 +108,10 @@ const getAllProducts = async (query: any) => {
 };
 
 
+ 
+
 export const ProductService={
   createProduct,
-  getAllProducts
+  getAllProducts,
+   
 }
